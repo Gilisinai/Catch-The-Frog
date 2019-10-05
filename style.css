@@ -12,7 +12,8 @@
 
 #timer{
     grid-area: h;
-    background-color: lightgreen
+    background-color: lightgreen;
+    padding-top: 0.5fr
 }
 
 #game{

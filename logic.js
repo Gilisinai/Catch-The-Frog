@@ -2,7 +2,7 @@ const Frog = function () {
 
     let level = 0
     let frogs = []
-    
+
     let timeleft = 5
 
     const getFrogs = function () {
@@ -11,14 +11,19 @@ const Frog = function () {
 
     const addFrogs = function () {
 
-        
+
         for (let i = 0; i < level; i++) {
             numID = frogs.length + 1
+            let num = Math.floor(Math.random() * 100)
             frogs.push({
-                size: Math.floor(Math.random() * 100),
-                position: Math.floor(Math.random() * 200),
+                size: function () {
+                    if(num < 15) {
+                        num = 15
+                    }
+                    return num
+                },
                 id: numID
-                 
+
             })
         }
 
@@ -57,7 +62,7 @@ const Frog = function () {
         return `rgb(${num1},${num2},${num3})`
     }
 
-    
+
 
     const timer = function () {
         setInterval(function () {
