@@ -6,21 +6,13 @@ const Render = function () {
             background-color: ${frog.randomColor()}; 
             width:${frogs[i].size()}px;
             height:${frogs[i].size()}px;
-            left:${((Math.random() * ($('#game').width()-100)))}px;
-            top:${frogs[i].size() * 4}px;">
-            
+            left:${((Math.random() * ($('#game').width() - 100)))}px;
+            top:${frogs[i].size() * 4}px;">      
             </div>`
 
             $("#game").append(frogBox)
-
-
         }
-        
-
     }
-
-
-
     return {
         render: renderFrogs
     }

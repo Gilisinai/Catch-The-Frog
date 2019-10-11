@@ -3,27 +3,23 @@ const Frog = function () {
     let level = 0
     let frogs = []
 
-    let timeleft = 5
-
     const getFrogs = function () {
         return frogs
     }
 
     const addFrogs = function () {
 
-
         for (let i = 0; i < level; i++) {
             numID = frogs.length + 1
             let num = Math.floor(Math.random() * 100)
             frogs.push({
                 size: function () {
-                    if(num < 15) {
+                    if (num < 15) {
                         num = 15
                     }
                     return num
                 },
                 id: numID
-
             })
         }
 
@@ -45,12 +41,10 @@ const Frog = function () {
                 frogs.splice(i, 1)
             }
         }
-
     }
 
     const levelUp = function () {
         level += 1
-        timeleft += 4
         addFrogs()
     }
 
@@ -62,21 +56,6 @@ const Frog = function () {
         return `rgb(${num1},${num2},${num3})`
     }
 
-
-
-    const timer = function () {
-        setInterval(function () {
-            timeleft -= 1
-            if (timeleft < 0) {
-                clearInterval(timer)
-
-            }
-
-        }, 1000)
-        return timeleft
-    }
-
-
     return {
         get: getFrogs,
         frogs: addFrogs,
@@ -84,8 +63,35 @@ const Frog = function () {
         count: countFrogs,
         remove: removeFrog,
         up: levelUp,
-        randomColor: randomColor,
-        timer: timer
+        randomColor: randomColor
+
     }
 }
 
+const Timer = function() {
+    let timeLeft = 10;
+    const start = function() {
+        time = setInterval(function () {
+    
+            timeLeft = timeLeft - 1;
+            if(timeLeft < 5) {
+                $(".sec").addClass("blink")
+            }
+            if (timeLeft == 0) {
+                clearInterval(time);
+                $("#game").text("game over")
+                $(".sec").removeClass("blink")
+            }
+            
+            $("#time").text(timeLeft)
+        }, 1000);
+    }
+
+    const moreTime = function() {
+        timeLeft += 2
+    }
+    return {
+        start: start,
+        moreTime: moreTime
+    }
+}
