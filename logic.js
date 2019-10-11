@@ -69,13 +69,17 @@ const Frog = function () {
 }
 
 const Timer = function() {
-    let timeLeft = 10;
+    let timeLeft = 7;
     const start = function() {
         time = setInterval(function () {
     
             timeLeft = timeLeft - 1;
-            if(timeLeft < 5) {
+            if(timeLeft == 5) {
+                $(".sec").addClass("yellow")
+            }
+            if(timeLeft <= 4) {
                 $(".sec").addClass("blink")
+                $(".sec").removeClass("yellow")
             }
             if (timeLeft == 0) {
                 clearInterval(time);
