@@ -2,6 +2,7 @@
     height: 100vh;
     display: grid;
     text-align: center;
+    font-family: 'Pacifico', cursive;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 10fr 2fr;
     grid-template-areas: 
@@ -13,37 +14,39 @@
 #timer{
     grid-area: h;
     background-color: lightgreen;
-    padding-top: 0.5fr
+    padding: 10px;
 }
 
 #game{
     grid-area: g;
-    background-color: green
+    background-color: green;
+    padding: 15%;
+    font-size: 50px;
 }
 
 #level{
     grid-area: l;
-    background-color: lightgreen
+    background-color: lightgreen;
+    padding: 15%;
 }
 
 #start{
     grid-area: s;
-    background-color: lightblue
+    background-color: lightblue;
+    padding: 15%;
+    cursor: pointer;
 }
 
 #frogs{
     grid-area: f;
-    background-color: lightgreen
+    background-color: lightgreen;
+    padding: 15%;
 }
 
 .frog{
-    
-    /* width: 30px;
-    height: 30px; */
     margin: 10px;
     display: inline-block;
-    position: absolute;
-    
+    position: absolute; 
 }
 
 .blink {
@@ -60,3 +63,4 @@
 .yellow {
     color: yellow;
 }
+

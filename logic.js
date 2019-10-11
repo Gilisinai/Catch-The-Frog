@@ -77,13 +77,13 @@ const Timer = function() {
             if(timeLeft == 5) {
                 $(".sec").addClass("yellow")
             }
-            if(timeLeft <= 4) {
+            if(timeLeft <= 3) {
                 $(".sec").addClass("blink")
                 $(".sec").removeClass("yellow")
             }
             if (timeLeft == 0) {
                 clearInterval(time);
-                $("#game").text("game over")
+                $("#game").text("game over!")
                 $(".sec").removeClass("blink")
             }
             

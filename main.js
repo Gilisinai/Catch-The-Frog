@@ -4,15 +4,11 @@ const renderer = Render()
 
 renderer.render(frog.frogs())
 
-
-
 $("#start").on("click", function () {
     frog.up()
     renderer.render(frog.get())
-    $("#frogCount").text(frog.level())
-    
-    timer.start()
-    
+    $("#frogCount").text(frog.level()) 
+    timer.start()  
 })
 
 $("#game").on("click", ".frog", function () {
@@ -26,7 +22,6 @@ $("#game").on("click", ".frog", function () {
         $("#frogCount").text(frog.level())
         renderer.render(frog.get())
     }
-    renderer.render(frog.get())
-    
+    renderer.render(frog.get())  
 })
 
